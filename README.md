@@ -6,26 +6,35 @@ After announcing that its company's operations were carbon-neutral by 2020, Appl
 
 DATA ANALYSIS EXPRESSIONS.
 
-Total Revenue = SUMX(normalizing_factors,normalizing_factors[Revenue])
+1. Total Revenue = SUMX(normalizing_factors,normalizing_factors[Revenue])
 
-Total Market capitalization = SUMX(normalizing_factors,normalizing_factors[Market Capitalization])
+2.Total Market capitalization = SUMX(normalizing_factors,normalizing_factors[Market Capitalization])
 
-Total Product life cycle Emissions = CALCULATE(SUM(greenhouse_gas_emissions[Emissions]),'greenhouse_gas_emissions'[Category]="Product life cycle emissions")
+3.Total Product life cycle Emissions = CALCULATE(SUM(greenhouse_gas_emissions[Emissions]),'greenhouse_gas_emissions'[Category]="Product life cycle emissions")
 
-Total Gross Emissions = CALCULATE(SUM(greenhouse_gas_emissions[Emissions]),'greenhouse_gas_emissions'[Type]="Gross Emissions")
+4.Total Gross Emissions = CALCULATE(SUM(greenhouse_gas_emissions[Emissions]),'greenhouse_gas_emissions'[Type]="Gross Emissions")
 
-Total Greenhouse Emissions = SUM(greenhouse_gas_emissions[Emissions])
+5.Total Greenhouse Emissions = SUM(greenhouse_gas_emissions[Emissions])
 
-Total Corporate Emissions = CALCULATE(SUM(greenhouse_gas_emissions[Emissions]),'greenhouse_gas_emissions'[Category]="Corporate Emissions")
+6.Total Corporate Emissions = CALCULATE(SUM(greenhouse_gas_emissions[Emissions]),'greenhouse_gas_emissions'[Category]="Corporate Emissions")
 
-Total Carbon Removals = CALCULATE(SUM(greenhouse_gas_emissions[Emissions]),'greenhouse_gas_emissions'[Type]="Carbon Removals")
+7.Total Carbon Removals = CALCULATE(SUM(greenhouse_gas_emissions[Emissions]),'greenhouse_gas_emissions'[Type]="Carbon Removals")
 
-Revenue Growth Rate - YoY =  VAR CurrentYearRevenue = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year])), 'normalizing_factors'[Revenue]) VAR PreviousYearRevenue = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year]) - 1), 'normalizing_factors'[Revenue]) RETURN DIVIDE(CurrentYearRevenue - PreviousYearRevenue, PreviousYearRevenue) 
+8.Revenue Growth Rate - YoY =  VAR CurrentYearRevenue = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year])), 'normalizing_factors'[Revenue]) VAR PreviousYearRevenue = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year]) - 1), 'normalizing_factors'[Revenue]) RETURN DIVIDE(CurrentYearRevenue - PreviousYearRevenue, PreviousYearRevenue) 
 
-Market Capitilation Growth Rate - YoY =  VAR CurrentYearMarketCapitilation = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year])), 'normalizing_factors'[Market Capitalization]) VAR PreviousYearMarketCapitilation = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year]) - 1), 'normalizing_factors'[Market Capitalization]) RETURN DIVIDE(CurrentYearMarketCapitilation - PreviousYearMarketCapitilation, PreviousYearMarketCapitilation) 
+9.Market Capitilation Growth Rate - YoY =  VAR CurrentYearMarketCapitilation = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year])), 'normalizing_factors'[Market Capitalization]) VAR PreviousYearMarketCapitilation = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year]) - 1), 'normalizing_factors'[Market Capitalization]) RETURN DIVIDE(CurrentYearMarketCapitilation - PreviousYearMarketCapitilation, PreviousYearMarketCapitilation) 
 
-Employees Growth Rate - YoY =  VAR CurrentYearEmployees = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year])), 'normalizing_factors'[Employees]) VAR PreviousYearEmployees = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year]) - 1), 'normalizing_factors'[Employees]) RETURN DIVIDE(CurrentYearEmployees - PreviousYearEmployees, PreviousYearEmployees)
+10.Employees Growth Rate - YoY =  VAR CurrentYearEmployees = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year])), 'normalizing_factors'[Employees]) VAR PreviousYearEmployees = SUMX(FILTER('normalizing_factors', 'normalizing_factors'[Fiscal Year] = MAX('normalizing_factors'[Fiscal Year]) - 1), 'normalizing_factors'[Employees]) RETURN DIVIDE(CurrentYearEmployees - PreviousYearEmployees, PreviousYearEmployees)
 
-Count Employees = sum(normalizing_factors[Employees])
+11.Count Employees = sum(normalizing_factors[Employees])
 
-Avg carbon footprint = AVERAGE(carbon_footprint_by_product[Carbon Footprint])
+12.Avg carbon footprint = AVERAGE(carbon_footprint_by_product[Carbon Footprint])
+
+
+Tools Used in the Analysis:
+1.Power BI
+2.DAX
+3.Power Query Editor
+4.Power BI Desktop
+5.Power BI Dashboard
+6.Excel
